@@ -1,25 +1,58 @@
-.header  {
+/*There is space between all items and the edge of the header (specific px amount doesn't matter here).
+Logo is centered vertically and horizontally.
+list-items are horizontal, and are centered vertically inside the header.
+left-links and right-links are pushed all the way to the left and right, and stay at the edge of the header when the page is resized.
+Your solution does not use floats, inline-block, or absolute positioning. */
+
+/*added a reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
   font-family: monospace;
   background: papayawhip;
+  /*CORRECTION:in the solution they add 8px padding */
+
+  display: flex; /*added this */
+  align-items: center; /*CORRECTION:I forgot to add this to center the logo vertically inside the header */
+  justify-content: space-between; /*added this */
 }
 
 .logo {
+  border: 2px solid red; /*HELPFUL added this unnecessary line for myself see comments from line 33 */
   font-size: 48px;
   font-weight: 900;
   color: tomato;
   background: white;
   padding: 4px 32px;
+  margin: 8px; /*added this for some space between logo and the header  */
+
+  /*CORRECTION:Important all these lines can be removed and it changes nothing
+  because this refers to the inside of the logo(the red border I added helps to see whats going on) */
+  display: flex; /*added this to center the logo */
+  align-items: center; /*center vertically */
+  justify-content: center /*center horizontally */;
 }
 
 ul {
   /* this removes the dots on the list items*/
   list-style-type: none;
+
+  /*CORRECTION:in the solution they removed the margin and padding and added a gap instead */
+  margin: 1.5rem 0.5rem; /*added some space around all three items of each side */
+
+  display: flex; /*added this to put the list items in a horizontal position */
 }
 
 a {
   font-size: 22px;
   background: white;
   padding: 8px;
+  /*CORRECTION:in the solution they did not add margin because they had already added a gap to each list items in the ul selector */
+  margin: 4px; /*added this to create some spaces between each items */
   /* this removes the line under the links */
   text-decoration: none;
 }

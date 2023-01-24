@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
   height: 100vh;
@@ -16,6 +16,7 @@ button {
   border: none;
   border-radius: 8px;
   background: #eee;
+  padding: 10px; /*the buttons have some padding */
 }
 
 input {
@@ -24,4 +25,64 @@ input {
   padding: 8px 24px;
   width: 400px;
   margin-bottom: 16px;
+}
+.container {
+  /*added this class with the following properties and values to make the footer stick to the bottom */
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  /*separate the left list items from the right list items */
+  display: flex;
+  justify-content: space-between;
+  /*some space between the header and the content */
+  margin-bottom: 100px;
+}
+.header,
+.footer {
+  /*add some padding on the header and footer */
+
+  padding: 5px;
+}
+
+.footer {
+  /*some space between the footer and the content */
+  margin-top: 100px;
+}
+
+.left-links,
+.right-links {
+  /*position the left and right link in a row and add some space  */
+  gap: 1.5rem;
+  display: flex;
+}
+li {
+  /*removes the list bullets */
+  list-style-type: none;
+}
+
+li a {
+  /*remove the blue underline under all the links */
+  text-decoration-line: none;
+}
+
+.content {
+  /*center the The logo, input and buttons */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*There is space between the logo, input and buttons. */
+  /*we'll add a row gap here we want space between logo input and button */
+  row-gap: 0.5rem;
+}
+
+.footer {
+  background-color: #eeeeee;
+  padding: 5px;
+
+  display: flex;
+  justify-content: space-between;
 }

@@ -28,6 +28,7 @@ input {
 }
 .container {
   /*added this class with the following properties and values to make the footer stick to the bottom */
+  height: 100%; /*the container has same height as the body  */
 
   display: flex;
   flex-direction: column;
@@ -38,7 +39,6 @@ input {
   display: flex;
   justify-content: space-between;
   /*some space between the header and the content */
-  margin-bottom: 100px;
 }
 .header,
 .footer {
@@ -49,7 +49,6 @@ input {
 
 .footer {
   /*some space between the footer and the content */
-  margin-top: 100px;
 }
 
 .left-links,
@@ -73,6 +72,7 @@ li a {
 }
 
 .content {
+  flex: 1; /*make the content take up more space(height) same as flex: 1 1 0 */
   /*center the The logo, input and buttons */
   display: flex;
   flex-direction: column;

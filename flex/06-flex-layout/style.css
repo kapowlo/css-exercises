@@ -47,10 +47,6 @@ input {
   padding: 5px;
 }
 
-.footer {
-  /*some space between the footer and the content */
-}
-
 .left-links,
 .right-links {
   /*position the left and right link in a row and add some space  */

@@ -75,7 +75,7 @@ li a {
   justify-content: center;
   align-items: center;
   /*There is space between the logo, input and buttons. */
-  /*we'll add a row gap here we want space between logo input and button */
+  /*we'll add a row gap here, we want space between logo input and button */
   row-gap: 0.5rem;
 }
 

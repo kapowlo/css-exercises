@@ -1,5 +1,6 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   min-height: 100vh;
 }
@@ -8,21 +9,92 @@ body {
   height: 72px;
   background: darkmagenta;
   color: white;
+  /*added stuff below 32px and weight 900. vertically centered
+16px away from the edge=padding*/
+  font-size: 32px;
+  font-weight: 900;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+  /*added stuff below text is centered horizontally and vertically
+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar {
   width: 300px;
   background: royalblue;
+  /*added stuff below sidebar doesn't shrink but takes up all the available space
+  16px padding */
+  flex-shrink: 0; /*only the sidebar doesn't shrink,we set flex-grow ONLY on the main */
+
+  padding: 16px;
 }
 
 .card {
   border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
+}
+
+/*main part starts from here */
+body {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  /*make the side bar and card align horizontally
+  The sidebar and cards take up all available space above the footer. Basically we want the whole main section
+  to take up more space */
+
+  flex-grow: 1; /*above when we selected the .sidebar  we put flex-shrink:0; */
+
+  display: flex;
+  flex-flow: row nowrap; /*no wrap for now because we don't want the cards to go below the sidebar */
+}
+
+.sidebar a {
+  /*The sidebar links are size 24px, are white, and do not have the underline text decoration. */
+  /* color: #fff; */
+  font-size: 24px;
+  text-decoration: none;
+}
+.sidebar span {
+  /*we only want the text to change color not the icon next to it,hence the span element */
+  color: white;
+}
+ul {
+  /*get rid of the markers and the default padding and margin */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  /*add a bit of space between each list items */
+  padding-top: 12px;
+}
+
+.wrap-cards {
+  /*make a container that wraps around all the cards  */
+
+  padding: 32px; /*creates space between our card section and both the header,footer sections */
+  gap: 26px; /*creates space between each cards */
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  /*select each individual card and set a width on them
+  the goal is to have some of them wrap to the nex line */
+
+  width: 400px;
+  flex: 0 1 auto;
 }
